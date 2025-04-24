@@ -82,25 +82,25 @@ Transaction entries are formatted using the `toString()` method inside `Transact
 ### Business Requirements
 
 1. **Existing Functionality**  
-- Only cash transactions were previously supported  
-- No transaction history was maintained  
+    - Only cash transactions were previously supported  
+    - No transaction history was maintained  
 
 2. **New Functionality**  
-- Track both cash and ACME stock holdings  
-- All stock transactions are in whole units (integers only)  
-- ACME stock has a fixed price of $5 per share  
-- Show full transaction history within the session  
+    - Track both cash and ACME stock holdings  
+    - All stock transactions are in whole units (integers only)  
+    - ACME stock has a fixed price of $5 per share  
+    - Show full transaction history within the session  
 
 3. **Balance Calculation**  
-- Cash Balance = Total Cash Deposits – Total Cash Withdrawals
-- Stock Balance = (Total Stock Deposits – Total Stock Withdrawals) * $5
-- Total Balance = Cash Balance + Stock Balance
+    - Cash Balance = Total Cash Deposits – Total Cash Withdrawals
+    - Stock Balance = (Total Stock Deposits – Total Stock Withdrawals) * $5
+    - Total Balance = Cash Balance + Stock Balance
 
 4. **Out of Scope (Suggestions for future improvements)**  
-- Other stock symbols or dynamic pricing to relfect market conditions 
-- Addition of securities: Options, Futures, Bonds 
-- Data persistence (reset on application exit)
-- Fractional stock ownership  
+    - Other stock symbols or dynamic pricing to reflect market conditions 
+    - Addition of securities: Options, Futures, Bonds 
+    - Data persistence (reset on application exit)
+    - Fractional stock ownership  
 
 ---
 
