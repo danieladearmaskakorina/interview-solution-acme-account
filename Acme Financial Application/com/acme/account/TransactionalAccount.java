@@ -120,7 +120,7 @@ public class TransactionalAccount implements Account {
 
     /**
      * Calculates the current account balance by summing cash
-     * and stock value (shares × $5.00).
+     * and stock value (shares * $5.00).
      *
      * @return the total account balance
      */

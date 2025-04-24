@@ -36,7 +36,7 @@
  * FILE STRUCTURE:
  * - TransactionalAccount.java → Business logic and state tracking
  * - Transaction.java → Individual transaction modeling and display
- * - UserInterface.java → CLI driver (this file)5
+ * - UserInterface.java → CLI driver (this file)
  *
  * MAINTAINER NOTES:
  * This file was designed to require minimal changes if additional

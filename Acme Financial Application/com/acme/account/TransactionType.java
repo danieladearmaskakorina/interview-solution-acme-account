@@ -16,7 +16,7 @@ public enum TransactionType {
      * Determines if the given type is currently supported
      * by the system (CASH or STOCK only).
      *
-     * This allows for graceful handling of future types
+     * This allows for re-usable handling of future types
      * without hardcoded rejection logic in the core account logic.
      *
      * @param type the transaction type to check
