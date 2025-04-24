@@ -86,9 +86,11 @@ Compile all Java files and run the main CLI:
 ```bash
 javac com/acme/account/*.java com/acme/application/UserInterface.java
 java com.acme.application.UserInterface
+```
+
 This launches the menu interface with an initial balance of $1000.
 
-Testing and Review Notes
+**Testing and Review Notes**
 Run UserInterface.java for full CLI-based interaction
 
 Run TransactionalAccount.main() for a scripted sanity test
@@ -97,5 +99,5 @@ Code is heavily commented to explain design rationale
 
 System Design Notes are embedded at the top of each file for clarity
 
-Reviewer Guidance
+**Reviewer Guidance**
 This project was written to prioritize readability, recoverability, and correctness. Comments and structure are meant to reduce ambiguity and make the logic easy to step through during review or live explanation.
