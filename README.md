@@ -97,4 +97,4 @@ This launches the menu interface with an initial balance of $1000.
 - System Design Notes are embedded at the top of each file for clarity
 
 **Reviewer Guidance**
-This project was written to prioritize readability, recoverability, and correctness. Comments and structure are meant to reduce ambiguity and make the logic easy to step through during review or live explanation.
+- This project was written to prioritize readability, recoverability, and correctness. Comments and structure are meant to reduce ambiguity and make the logic easy to step through during review or live explanation.
