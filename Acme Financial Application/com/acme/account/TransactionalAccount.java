@@ -8,8 +8,12 @@ import java.util.List;
  * both CASH and STOCK transactions (ACME shares at $5.00/share).
  * 
  * - Supports deposit, withdrawal, balance calculation, and transaction logging
- * - Validates input and guards against overflow and invalid types
- * - Maintains transaction history using a List<Transaction>
+ * - Validates input:
+ * 		- Amounts must be positive
+ * 		- Stock units must be positive integers
+ * 		- Menu types restricted to CASH and STOCK only
+ * - Prevents overflow by using Math.toIntExact when casting stock amounts
+ * - Maintains readable transaction history using a List<Transaction>
  */
 public class TransactionalAccount implements Account {
 
@@ -45,6 +49,7 @@ public class TransactionalAccount implements Account {
 
         if (type == TransactionType.CASH) {
             cashBalance += amount;
+			// Record deposit in session log for CLI history view
             history.add(new Transaction(type, "Deposit", amount));
             System.out.println("Cash deposited: $" + amount);
         } else if (type == TransactionType.STOCK) {
@@ -55,6 +60,7 @@ public class TransactionalAccount implements Account {
 
             int units;
             try {
+				// Prevents silent overflow from large double-to-int cast
                 units = Math.toIntExact((long) amount);
             } catch (ArithmeticException e) {
                 System.out.println("Stock deposit exceeds allowed number of shares.");
@@ -62,6 +68,7 @@ public class TransactionalAccount implements Account {
             }
 
             stockShares += units;
+			// Record deposit in session log for CLI history view
             history.add(new Transaction(type, "Deposit", units));
             System.out.println("Stocks deposited: " + units);
         } else {
@@ -89,6 +96,7 @@ public class TransactionalAccount implements Account {
                 return;
             }
             cashBalance -= amount;
+			// Record withdrawal in session log for CLI history view
             history.add(new Transaction(type, "Withdrawal", amount));
             System.out.println("Cash withdrawn: $" + amount);
         } else if (type == TransactionType.STOCK) {
@@ -99,6 +107,7 @@ public class TransactionalAccount implements Account {
 
             int units;
             try {
+				// Prevents silent overflow from large double-to-int cast
                 units = Math.toIntExact((long) amount);
             } catch (ArithmeticException e) {
                 System.out.println("Stock withdrawal exceeds allowed number of shares.");
@@ -111,6 +120,7 @@ public class TransactionalAccount implements Account {
             }
 
             stockShares -= units;
+			// Record withdrawal in session log for CLI history view
             history.add(new Transaction(type, "Withdrawal", units));
             System.out.println("Stocks withdrawn: " + units + " shares.");
         } else {
